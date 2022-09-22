@@ -18,10 +18,12 @@ trait PasswordChangeMailNotificationTrait
     {
         return 'password';
     }
+
     public function emailColumnsName(): string
     {
         return 'email';
     }
+
     public function passwordChangeNotificationMail(): Mailable
     {
         return new PasswordChangeNotification();
@@ -39,15 +41,15 @@ trait PasswordChangeMailNotificationTrait
 
     public function sendPasswordChangeNotification(): void
     {
-        if (!$this->isPasswordChange()){
+        if (! $this->isPasswordChange()) {
             return;
         }
         $mail = Mail::to($this->getRawOriginal($this->emailColumnsName()));
 
         // for Queue
-        if($this->passwordChangeShouldBeQueue()){
-
+        if ($this->passwordChangeShouldBeQueue()) {
             $mail->queue($this->passwordChangeNotificationMail());
+
             return;
         }
 

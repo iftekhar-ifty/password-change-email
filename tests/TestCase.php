@@ -2,9 +2,9 @@
 
 namespace Iftekhar\PasswordChangeEmail\Tests;
 
+use Iftekhar\PasswordChangeEmail\PasswordChangeEmailServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Iftekhar\PasswordChangeEmail\PasswordChangeEmailServiceProvider;
 
 class TestCase extends Orchestra
 {
