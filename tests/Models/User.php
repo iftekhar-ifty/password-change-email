@@ -1,11 +1,11 @@
 <?php
 
 namespace Iftekhar\PasswordChangeEmail\Tests\Models;
+
 use Iftekhar\PasswordChangeEmail\Contracts\PasswordChangeNotificationContract;
 use Iftekhar\PasswordChangeEmail\Traits\PasswordChangeMailNotificationTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Mail\Mailable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements PasswordChangeNotificationContract
@@ -41,7 +41,4 @@ class User extends Authenticatable implements PasswordChangeNotificationContract
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-
-
 }
