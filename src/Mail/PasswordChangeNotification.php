@@ -27,6 +27,6 @@ class PasswordChangeNotification extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.password-change-notification');
+        return $this->markdown('password-change-notification::emails.password-change-notification');
     }
 }
