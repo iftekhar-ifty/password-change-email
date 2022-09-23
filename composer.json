@@ -1,10 +1,10 @@
 {
-    "name": "iftekhar/password-change-email",
-    "description": "A simple pacakge for send email when password is change",
+    "name": "iftekhar/password-change-notification",
+    "description": "A simple package for send email when password is change",
     "keywords": [
         "iftekhar",
         "laravel",
-        "password-change-email"
+        "password-change-notification"
     ],
     "homepage": "https://github.com/iftekhar/password-change-email",
     "license": "MIT",
