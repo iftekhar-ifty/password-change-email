@@ -7,41 +7,56 @@
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/password-change-email.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/password-change-email)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require iftekhar/password-change-notification
+composer require iftekhar/password-change-notification "^1.0.1"
 ```
+ you can change everythink you want here example below
 
-You can publish and run the migrations with:
-
+1.For Email Class
 ```bash
-php artisan vendor:publish --tag="password-change-email-migrations"
-php artisan migrate
+
+    public function passwordChangeNotificationMail(): Mailable
+    {
+      // Mail Class
+        return new SendEmailFor();
+    }
+
 ```
-
-You can publish the config file with:
-
+2. The columns will send email when it changes
 ```bash
-php artisan vendor:publish --tag="password-change-email-config"
+
+    public function passwordColumnsName(): string
+    {
+        return 'password';
+    }
+
 ```
 
-This is the contents of the published config file:
+3. User Email Columns 
+```bash
 
-```php
-return [
-];
+    public function emailColumnsName(): string
+    {
+        return 'email';
+    }
+
 ```
+
+3. If you want queue mail here this code
+```bash
+
+    public function passwordChangeShouldBeQueue(): bool
+    {
+        return true;
+    }
+
+```
+
 
 Optionally, you can publish the views using
 
@@ -76,7 +91,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Iftekhar Hossain](https://github.com/iftekhar)
+- [Iftekhar Hossain](https://github.com/iftekhar-ifty)
 - [All Contributors](../../contributors)
 
 ## License
